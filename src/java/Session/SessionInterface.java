@@ -6,6 +6,7 @@
 
 package Session;
 
+import Session.Session1.Infostud;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -18,4 +19,8 @@ public interface SessionInterface {
     public String find();
     public List find1();
     public List find3();
+    public List<Infostud> find2();
+    public String[] find4();    
+    public void insertGroup();
+    public void insertStudent();
 }

@@ -5,12 +5,12 @@
         <param-value>Development</param-value>
     </context-param>
     <servlet>
-        <servlet-name>Servlet1</servlet-name>
-        <servlet-class>Controller.Servlet1</servlet-class>
+        <servlet-name>Main</servlet-name>
+        <servlet-class>Controller.Main</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Servlet1</servlet-name>
-        <url-pattern>/Servlet1</url-pattern>
+        <servlet-name>Main</servlet-name>
+        <url-pattern>/Main</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

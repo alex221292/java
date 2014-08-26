@@ -4,6 +4,7 @@
     Author     : Алексей
 --%>
 
+<%@page import="Session.Session1.Infostud"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <div id="main">
@@ -18,14 +19,19 @@
         <c:forEach var="article" items="${articles}">
             <tr><td>
                     <article>
-                        <a href="page?id=${article.studentPK.studentId}">
                             <h1>${article.fio}</h1>
-                        </a>
                     </article>
                 </td>
-                <td>${article.groupNum}</td>
+                <td>
+                    <article>
+                    <h1>${article.group}</h1>
+                    </article>
+                </td>
             </tr>
             </c:forEach>
             <c:out value="${tests}"></c:out>
+            <form action="Servlet1">
+                <input type="submit" name="test">
+            </form>
     </table>
 </div>

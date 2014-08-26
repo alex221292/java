@@ -6,9 +6,13 @@
 
 package Controller;
 
+import Session.Session1.Infostud;
 import Session.SessionInterface;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.Resource;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,21 +24,26 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Алексей
  */
-@WebServlet(name = "Servlet1", loadOnStartup = 1)
-public class Servlet1 extends HttpServlet {
+@WebServlet(name = "Main")
+public class Main extends HttpServlet {
     @EJB
     private SessionInterface session1;
-    
+    /*@Resource
+    UserTransaction ut;*/
 
-    @Override
+    /*@Override
     public void init() throws ServletException {
-        getServletContext().setAttribute("tests", session1.find1().toString());
-        getServletContext().setAttribute("articles", session1.find1());
-    }
+        //getServletContext().setAttribute("tests", session1.find2());
+        List<Infostud> arr=new ArrayList<>(session1.find2());
+        getServletContext().setAttribute("articles", arr);
+    }*/
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        List<Infostud> arr=new ArrayList<>(session1.find2());
+        getServletContext().setAttribute("articles", arr);
+        getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
         
     }
 

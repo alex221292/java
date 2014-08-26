@@ -123,7 +123,7 @@ public class Groups implements Serializable {
 
     @Override
     public String toString() {
-        return "Entity.Groups[ groupId=" + groupId + " ]";
+        return this.groupNum;//"Entity.Groups[ groupId=" + groupId + " ]";
     }
     
 }
